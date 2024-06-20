@@ -1,0 +1,3 @@
+[submodule "qlitehtml"]
+	path = qlitehtml
+	url = https://code.qt.io/playground/qlitehtml.git
