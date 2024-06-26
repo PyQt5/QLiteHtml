@@ -2,3 +2,5 @@ PyQt5
 sip
 PyQt5-sip
 PyQt-builder
+PyQt6; python_version >= "3.6.1"
+PyQt6-sip; python_version >= "3.6.1"
