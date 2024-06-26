@@ -26,11 +26,15 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/pyproject.toml.in"
 add_custom_target(
   ${PROJECT_NAME} ALL
   COMMAND
-    sip-install --verbose --tracing --qmake="${QT_QMAKE_EXECUTABLE}"
+    sip-build --verbose --qmake="${QT_QMAKE_EXECUTABLE}"
+    --build-dir="${CMAKE_BINARY_DIR}/${PROJECT_NAME}/build"
     --target-dir="${CMAKE_INSTALL_PREFIX}"
     --api-dir="${CMAKE_INSTALL_PREFIX}/PyQt5"
     --scripts-dir="${CMAKE_INSTALL_PREFIX}"
   DEPENDS qlitehtml
+  SOURCES pyproject.toml requirements.txt
+          sip/QLiteHtmlWidget/QLiteHtmlWidget.sip
+          sip/QLiteHtmlWidget/QLiteHtmlWidgetmod.sip
   WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_custom_target(
