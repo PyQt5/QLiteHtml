@@ -1,0 +1,45 @@
+# Specify sip v6 as the build system for the package.
+[build-system]
+requires = ["sip >=5.3, <7", "PyQt-builder >=1.9, <2"]
+build-backend = "sipbuild.api"
+
+# Specify the PEP 621 metadata for the project.
+[project]
+name = "QLiteHtmlWidget"
+version = "5.15"
+description = "Python bindings for the QLiteHtmlWidget library"
+urls.homepage = "https://github.com/PyQt5/QLiteHtml"
+dependencies = ["PyQt5 (>=5.15.0, <6.0.0)"]
+
+[[project.authors]]
+name = "Irony"
+email = "892768447@qq.com"
+
+# Specify a PyQt-based project.
+[tool.sip]
+project-factory = "pyqtbuild:PyQtProject"
+
+# Specify the PEP 566 metadata for the project.
+[tool.sip.metadata]
+name = "QLiteHtmlWidget"
+version = "5.15"
+summary = "Python bindings for the QLiteHtmlWidget library"
+home-page = "https://github.com/PyQt5/QLiteHtml"
+author = "Irony"
+author-email = "892768447@qq.com"
+requires-dist = "PyQt5 (>=5.15.0, <6.0.0)"
+
+# Configure the project.
+[tool.sip.project]
+tag-prefix = "QLiteHtmlWidget"
+sip-include-dirs = [
+    "${PYQTPATH}/bindings",
+]
+
+# Configure the building of the fib bindings.
+[tool.sip.bindings.QLiteHtmlWidget]
+qmake-QT = ["core", "gui", "widgets"]
+headers = []
+include-dirs = ["${CMAKE_CURRENT_SOURCE_DIR}/../qlitehtml/src"]
+libraries = ["qlitehtml${VER}", "litehtml", "gumbo"]
+library-dirs = ["${QLITEHTMLLIBDIR}", "${QLITEHTMLLIBDIR}/3rdparty/litehtml", "${QLITEHTMLLIBDIR}/3rdparty/litehtml/src/gumbo"]
