@@ -1,0 +1,10 @@
+[generator-project]
+debug-level = full
+output-directory = out
+header-file = ${CMAKE_CURRENT_SOURCE_DIR}/../qlitehtml/src/qlitehtmlwidget.h
+typesystem-file = typesystem_QLiteHtmlWidget.xml
+include-path = ${CMAKE_CURRENT_SOURCE_DIR}/../qlitehtml/src:${QtCore_INCLUDE_DIRS}:${QtGui_INCLUDE_DIRS}:${QtWidgets_INCLUDE_DIRS}
+typesystem-path = ${PYSIDEPATH}/typesystems
+
+enable-parent-ctor-heuristic
+enable-return-value-heuristic

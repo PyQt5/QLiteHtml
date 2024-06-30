@@ -321,3 +321,8 @@ CMakeLists.txt.user*
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/qt,qtcreator,cmake,c++,visualstudiocode,python
+
+.DS_Store
+Release
+Debug
+build
